@@ -29,7 +29,7 @@
 <!-- /Nav -->
 
 <!-- Body -->
-<div class="container-fluid" ng-init="costumers=['José', 'Alfredo', 'Silva']">
+<div class="container-fluid" ng-init="costumers=[{name:'José', city: 'Novo Hamburgo'}, {name:'Alfredo', city:'Sao Leopoldo'}, {name:'Silva', city:'Porto Alegre'}]">
 	<div class="row">
 		<div class="col-md-12">
 			Name: <input class="form-control" ng-model="name"/>  <!-- Outra diretiva: ng-model  -->
@@ -40,9 +40,7 @@
 		<div class="col-md-12">
 			<strong>Costumers</strong>
 			<ul>
-				<li>José</li>
-				<li>Alfredo</li>
-				<li>Silva</li>
+				<li ng-repeat="costumer in costumers">{{costumer.name}} - {{costumer.city}}</li>
 			</ul>
 		</div>
 	</div>
