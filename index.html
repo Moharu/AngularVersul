@@ -4,8 +4,7 @@
 	<title>My web page!</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
-<body>
-
+<body ng-app> 			<!-- Nossa primeira diretiva, ng-app  -->
 <!-- Nav -->
 <div class="container-fluid">
 	<div class="row">
@@ -33,15 +32,10 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<h2>
-				Nada
-			</h2>
-			<p>
-				Absolutamente lorem nada ipsum.
-			</p>
-			<p>
-				<a class="btn" href="www.google.com">Muito legal »</a>
-			</p>
+			Name: <input class="form-control" ng-model="name"/>  <!-- Outra diretiva: ng-model  -->
+			<span>
+				My name is {{ name }} <!-- Handlebars -> {{ }}  -->
+			</span>
 		</div>
 	</div>
 </div>
