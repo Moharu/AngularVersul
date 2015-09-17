@@ -29,13 +29,21 @@
 <!-- /Nav -->
 
 <!-- Body -->
-<div class="container-fluid">
+<div class="container-fluid" ng-init="costumers=['José', 'Alfredo', 'Silva']">
 	<div class="row">
 		<div class="col-md-12">
 			Name: <input class="form-control" ng-model="name"/>  <!-- Outra diretiva: ng-model  -->
 			<span>
 				My name is {{ name }} <!-- Handlebars -> {{ }}  -->
 			</span>
+		</div>
+		<div class="col-md-12">
+			<strong>Costumers</strong>
+			<ul>
+				<li>José</li>
+				<li>Alfredo</li>
+				<li>Silva</li>
+			</ul>
 		</div>
 	</div>
 </div>
