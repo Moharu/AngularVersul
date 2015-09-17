@@ -1,0 +1,23 @@
+{
+  "name": "angular-versul",
+  "version": "1.0.0",
+  "description": "Teaching angular with examples",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moharu/AngularVersul.git"
+  },
+  "author": "João Teló",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moharu/AngularVersul/issues"
+  },
+  "homepage": "https://github.com/Moharu/AngularVersul#readme",
+  "dependencies": {
+    "live-server": "^0.8.1"
+  }
+}
