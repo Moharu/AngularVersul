@@ -1,9 +1,22 @@
-var app = angular.module('app', []);   // estamos declarando o módulo (mesmo nome que no ng-app, no layout)
+var app = angular.module('app', []);
 
-// Nosso primeiro controller
-app.controller('mainController', function($scope){
+app.controller('mainController', function($scope, $http){
 
-        // Ao invés de usar ng-init, estamos atribuindo essas variáveis ao $scope
+        var req = {
+            method: 'GET',
+            url: 'http://elasticsearch.waferpie.com:9200/'
+        }
+
+        $http(req).then(
+            function(data){
+                console.log('Success!');
+                console.log(data);
+            },
+            function(error){
+                console.log('Error!');
+                console.log(error);
+            });
+
         $scope.costumers=[
             {name:'José', city: 'Novo Hamburgo'}, 
             {name:'Alfredo', city:'Sao Leopoldo'}, 
