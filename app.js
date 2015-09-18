@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute']); // Adicionamos ngRoute como dependencia
+var app = angular.module('app', ['ngRoute']);
 
 app.factory('Pay', function($http){
     var pay = {};
@@ -33,3 +33,12 @@ app.controller('mainController', function($scope, Pay){
             });
 
     });
+
+app.config(function($routeProvider){
+    //configuração do provedor de rotas
+    $routeProvider
+        .otherwise({
+            templateUrl: 'fragments/home.html',
+            controller: 'mainController'
+        })
+});

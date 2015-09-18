@@ -13,12 +13,12 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="#">My web page!</a>
+					</button> <a class="navbar-brand" href="#/home">My web page!</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active">
-							<a href="#">Home</a>
+							<a href="#/home">Home</a>
 						</li>
 					</ul>
 				</div>
@@ -29,21 +29,7 @@
 <!-- /Nav -->
 
 <!-- Body -->
-<div class="container-fluid" ng-controller="mainController">
-	<div class="row">
-		<div class="col-md-12">
-			Search: <input class="form-control" ng-model="nameSearch"/>
-		</div>
-		<div class="col-md-12">
-			<strong>Orders</strong>
-			<ul>
-				<li ng-repeat="order in orders | filter: nameSearch">
-				{{order._source.order_id}} - Status: {{order._source.status | beautify}} - {{order._source.amount/100 | currency : 'R$'}}
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
+<div ng-view></div>
 <!-- /Body -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
