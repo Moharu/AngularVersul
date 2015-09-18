@@ -17,7 +17,6 @@ app.controller('mainController', function($scope, Pay){
         Pay.findOrders().then(
             function(success){
                 console.log(success);
-                //$scope.orders = success.data.hits.hits;
             },
             function(error){
                 console.log("error");
