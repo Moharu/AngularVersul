@@ -37,7 +37,9 @@
 		<div class="col-md-12">
 			<strong>Orders</strong>
 			<ul>
-				<li ng-repeat="order in orders | filter: nameSearch">Deveria ter um order aqui</li>
+				<li ng-repeat="order in orders | filter: nameSearch">
+				{{order._source.order_id}} - Status: {{order._source.status}} - R$ {{order._source.amount/100}}
+				</li>
 			</ul>
 		</div>
 	</div>
