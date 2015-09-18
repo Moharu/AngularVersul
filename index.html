@@ -32,12 +32,12 @@
 <div class="container-fluid" ng-controller="mainController">
 	<div class="row">
 		<div class="col-md-12">
-			Name: <input class="form-control" ng-model="nameSearch"/>
+			Search: <input class="form-control" ng-model="nameSearch"/>
 		</div>
 		<div class="col-md-12">
-			<strong>Costumers</strong>
+			<strong>Orders</strong>
 			<ul>
-				<li ng-repeat="costumer in costumers | filter: nameSearch | orderBy: 'name'">{{costumer.name}} - {{costumer.city | uppercase}}</li>
+				<li ng-repeat="order in orders | filter: nameSearch">Deveria ter um order aqui</li>
 			</ul>
 		</div>
 	</div>

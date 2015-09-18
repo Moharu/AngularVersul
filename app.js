@@ -1,26 +1,26 @@
 var app = angular.module('app', []);
 
-app.controller('mainController', function($scope, $http){
-
+app.factory('Pay', function($http){
+    var pay = {};
+    pay.findOrders = function(){
         var req = {
             method: 'GET',
-            url: 'http://elasticsearch.waferpie.com:9200/'
-        }
+            url: 'http://elasticsearch.waferpie.com:9200/feeds/orders/_search',
+        };
+        return $http(req);
+    }
+    return pay;
+});
 
-        $http(req).then(
-            function(data){
-                console.log('Success!');
-                console.log(data);
+app.controller('mainController', function($scope, Pay){
+
+        Pay.findOrders().then(
+            function(success){
+                console.log(success);
+                //$scope.orders = success.data.hits.hits;
             },
             function(error){
-                console.log('Error!');
-                console.log(error);
+                console.log("error");
             });
-
-        $scope.costumers=[
-            {name:'José', city: 'Novo Hamburgo'}, 
-            {name:'Alfredo', city:'Sao Leopoldo'}, 
-            {name:'Silva', city:'Porto Alegre'}
-        ];
 
     });
