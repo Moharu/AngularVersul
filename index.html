@@ -38,7 +38,7 @@
 			<strong>Orders</strong>
 			<ul>
 				<li ng-repeat="order in orders | filter: nameSearch">
-				{{order._source.order_id}} - Status: {{order._source.status}} - R$ {{order._source.amount/100}}
+				{{order._source.order_id}} - Status: {{order._source.status}} - {{order._source.amount/100 | currency : 'R$'}}
 				</li>
 			</ul>
 		</div>
