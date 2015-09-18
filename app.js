@@ -38,7 +38,6 @@ app.config(function($routeProvider){
     //configuração do provedor de rotas
     $routeProvider
         .otherwise({
-            templateUrl: 'fragments/home.html',
-            controller: 'mainController'
+            templateUrl: 'fragments/devops.html'
         })
 });
