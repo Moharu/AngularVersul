@@ -12,6 +12,16 @@ app.factory('Pay', function($http){
     return pay;
 });
 
+app.filter('beautify', function(){
+    return function beautifier(passedValue){
+        passedValue = passedValue.toLowerCase();
+        firstLetter = passedValue.charAt(0);
+        firstLetter = firstLetter.toUpperCase();
+        value = passedValue.replace(/^./, firstLetter); // this regex finds the first letter
+        return value;
+    };
+});
+
 app.controller('mainController', function($scope, Pay){
 
         Pay.findOrders().then(
